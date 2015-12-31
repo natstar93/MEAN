@@ -6,7 +6,7 @@
   </head>
   <body ng-app="news" ng-controller="MainCtrl as ctrl">
     <div ng-repeat="post in ctrl.posts | orderBy: '-upvotes'">
-      {{post.title}} - upvotes: {{post.upvotes}}
+      <span ng-click='ctrl.incrementUpvotes(post)'>^</span>{{post.title}} - upvotes: {{post.upvotes}}
     </div>
     <form ng-submit='ctrl.addPost()'>
       <input type='text' ng-model='ctrl.title'></input>

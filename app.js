@@ -15,4 +15,8 @@ app.controller('MainCtrl', [function() {
     self.posts.push({title: self.title, upvotes: 0});
     self.title = '';
   };
+
+  self.incrementUpvotes = (post) => {
+    post.upvotes += 1;
+  };
 }]);
