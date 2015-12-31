@@ -6,7 +6,12 @@ app.config(['$stateProvider', '$urlRouterProvider', ($stateProvider, $urlRouterP
     .state('home',{
       url: '/home',
       templateUrl: '/home.html',
-      controller: 'MainCtrl',
+      controller: 'MainCtrl'
+    })
+    .state('posts', {
+      url: '/posts/{id}',
+      templateUrl: '/posts.html',
+      controller: 'PostsCtrl'
     });
 
   $urlRouterProvider.otherwise('home');
@@ -35,4 +40,8 @@ app.controller('MainCtrl', ['postFactory', function(postFactory) {
   self.incrementUpvotes = (post) => {
     post.upvotes += 1;
   };
+}]);
+
+app.controller('PostsCtrl', ['postFactory', '$stateParams', function(postFactory, $stateParams) {
+  console.log($stateParams);
 }]);
