@@ -1,4 +1,17 @@
-const app = angular.module('news', []);
+const app = angular.module('news', ['ui.router']);
+
+app.config(['$stateProvider', '$urlRouterProvider', ($stateProvider, $urlRouterProvider) => {
+
+  $stateProvider
+    .state('home',{
+      url: '/home',
+      templateUrl: '/home.html',
+      controller: 'MainCtrl',
+    });
+
+  $urlRouterProvider.otherwise('home');
+
+}]);
 
 app.factory('postFactory', [() => {
   const postList = {
