@@ -32,7 +32,15 @@ app.controller('MainCtrl', ['postFactory', function(postFactory) {
 
   self.addPost = () => {
     if (!self.title || self.title === '') {return}
-    self.posts.push({title: self.title, link: self.link, upvotes: 0});
+    self.posts.push({
+      title: self.title,
+      link: self.link,
+      upvotes: 0,
+      comments: [
+        {author: 'Natstar', body: 'Very good', upvotes: 0},
+        {author: 'Katsu', body: 'Nice', upvotes: 0}
+      ]
+    });
     self.title = '';
     self.link = '';
   };
@@ -43,5 +51,9 @@ app.controller('MainCtrl', ['postFactory', function(postFactory) {
 }]);
 
 app.controller('PostsCtrl', ['postFactory', '$stateParams', function(postFactory, $stateParams) {
-  console.log($stateParams);
+
+  self = this;
+
+  self.post = postFactory.posts[$stateParams.id];
+
 }]);
