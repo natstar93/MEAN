@@ -8,5 +8,9 @@
     <div ng-repeat="post in ctrl.posts | orderBy: '-upvotes'">
       {{post.title}} - upvotes: {{post.upvotes}}
     </div>
+    <form ng-submit='ctrl.addPost()'>
+      <input type='text' ng-model='ctrl.title'></input>
+      <button type='submit'>Post</button>
+    </form>
   </body>
 </html>

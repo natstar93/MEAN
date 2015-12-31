@@ -9,4 +9,10 @@ app.controller('MainCtrl', [function() {
     {title: 'post 4', upvotes: 9},
     {title: 'post 5', upvotes: 4}
   ];
+
+  self.addPost = () => {
+    if (!self.title || self.title === '') {return}
+    self.posts.push({title: self.title, upvotes: 0});
+    self.title = '';
+  };
 }]);
