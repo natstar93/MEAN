@@ -1,0 +1,23 @@
+{
+  "name": "mean-stack",
+  "version": "1.0.0",
+  "description": "Mean stack project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/natstar93/MEAN.git"
+  },
+  "author": "Natalie Akam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/natstar93/MEAN/issues"
+  },
+  "homepage": "https://github.com/natstar93/MEAN#readme",
+  "dependencies": {
+    "express-generator": "^4.13.1",
+    "mongoose": "^4.3.4"
+  }
+}
