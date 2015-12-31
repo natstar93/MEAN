@@ -12,8 +12,9 @@ app.controller('MainCtrl', [function() {
 
   self.addPost = () => {
     if (!self.title || self.title === '') {return}
-    self.posts.push({title: self.title, upvotes: 0});
+    self.posts.push({title: self.title, link: self.link, upvotes: 0});
     self.title = '';
+    self.link = '';
   };
 
   self.incrementUpvotes = (post) => {
