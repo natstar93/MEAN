@@ -56,9 +56,6 @@ app.controller('PostsCtrl', ['postFactory', '$stateParams', function(postFactory
   self.post = postFactory.posts[$stateParams.id];
 
   self.addComment = () => {
-    console.log('working');
-    console.log(self.body);
-    console.log(self.post.comments);
     if(!self.body || self.body === '') { return; }
     self.post.comments.push({
       body: self.body,
