@@ -18,10 +18,17 @@ app.config(['$stateProvider', '$urlRouterProvider', ($stateProvider, $urlRouterP
 
 }]);
 
-app.factory('postFactory', [() => {
+app.factory('postFactory', ['$http', ($http) => {
   const postList = {
     posts: []
   };
+
+  postList.getAll = () => {
+    return $http.get('/posts').success((data) => {
+      angular.copy(data, postList.posts);
+    });
+  };
+
   return postList;
 }]);
 
