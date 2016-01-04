@@ -6,7 +6,12 @@ app.config(['$stateProvider', '$urlRouterProvider', ($stateProvider, $urlRouterP
     .state('home',{
       url: '/home',
       templateUrl: '/home.html',
-      controller: 'MainCtrl'
+      controller: 'MainCtrl',
+      resolve: {
+        postPromise: ['postFactory', (posts) => {
+          return posts.getAll();
+        }]
+      }
     })
     .state('posts', {
       url: '/posts/{id}',
